@@ -10,10 +10,11 @@ const router = new Router({
     {
       path: '/login',
       name: 'Login',
-      component: Login
+      component: Login,
+      meta: { NoAuth: true }
     },
     {
-      path: '/',
+      path: '/hello',
       name: 'HelloWorld',
       component: HelloWorld
     }
@@ -21,7 +22,16 @@ const router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
-  next() // default logic
+  if (to.path !== '/login' && !to.meta.NoAuth) {
+    if (sessionStorage.getItem('phone') == null ||
+    sessionStorage.getItem('password') == null) {
+      next('/login')
+    } else {
+      next() // already login
+    }
+  } else {
+    next() // default logic
+  }
 })
 
 export default router
