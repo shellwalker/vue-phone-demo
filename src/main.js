@@ -5,9 +5,12 @@ import Mint from 'mint-ui'
 import 'mint-ui/lib/style.css'
 import App from './App'
 import router from './router'
+import echarts from 'echarts'
 
 Vue.config.productionTip = false
 Vue.use(Mint)
+
+Vue.prototype.$echarts = echarts
 
 /* eslint-disable no-new */
 new Vue({
