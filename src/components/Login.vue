@@ -21,7 +21,7 @@ export default {
   methods: {
     isLogin () {
       if (sessionStorage.getItem('phone') && sessionStorage.getItem('password')) {
-        this.$router.push('/hello')
+        this.$router.push('/pain')
       }
     },
     showLoginInfo () {
@@ -29,7 +29,7 @@ export default {
       console.log('Input user:' + this.phone + ', ' + this.password)
       sessionStorage.setItem('phone', this.phone)
       sessionStorage.setItem('password', this.password)
-      this.$router.push('/hello')
+      this.$router.push('/pain')
     }
   }
 }

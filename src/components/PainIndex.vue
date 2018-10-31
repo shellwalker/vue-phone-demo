@@ -2,20 +2,19 @@
   <div>
     <div style="text-align:center">
       <div id="painRecord" class="chart-container">
-
       </div>
     </div>
     <div>
       上面是我的Echart Demo
     </div>
     <div class="btn-container">
-      <mt-button  @click="showLoginInfo" type="primary" size="large">新增记录</mt-button>
+      <mt-button  @click="jumpToAddPainRecord" type="primary" size="large">新增记录</mt-button>
     </div>
   </div>
 </template>
 <script>
 export default {
-  name: 'PainRecord',
+  name: 'PainIndex',
   data () {
     return {
       msg: 'Welcome to my first Echart Demo'
@@ -49,6 +48,9 @@ export default {
           data: [3, 5, 6, 3, 5, 7, 8]
         }
       })
+    },
+    jumpToAddPainRecord () {
+      this.$router.push('painadd')
     }
   }
 }

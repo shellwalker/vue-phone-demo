@@ -2,7 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Login from '@/components/Login'
-import PainRecord from '@/components/PainRecord'
+import PainIndex from '@/components/PainIndex'
+import PainAdd from '@/components/PainAdd'
 
 Vue.use(Router)
 
@@ -20,10 +21,16 @@ const router = new Router({
       component: HelloWorld
     },
     {
-      path: '/painrecord',
-      name: 'PainRecord',
-      component: PainRecord,
-      meta: { NoAuth: true }
+      path: '/pain',
+      name: 'PainIndex',
+      component: PainIndex
+      // meta: { NoAuth: true }
+    },
+    {
+      path: '/painadd',
+      name: 'PainAdd',
+      component: PainAdd
+      // meta:
     }
   ]
 })
